@@ -4,6 +4,8 @@ let tripId = 0;
 
 
 class Driver (name) {
-  this.name = name
-  this.id = ++tripId;
+  constructor(name) {
+    this.name = name;
+    this.id = ++tripId;
+  }
 }
