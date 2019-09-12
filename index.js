@@ -4,7 +4,7 @@ let tripId = 0;
 
 let store = { drivers: [], passengers: [], trips: [] };
 
-class Driver (name) {
+class Driver {
   constructor(name) {
     this.name = name;
     this.id = driverId++;
