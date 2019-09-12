@@ -12,7 +12,7 @@ class Driver {
   }
   trips() {
     return store.trips.filter(trip => {
-      return trip.driverId === this.id;
+      return trip.driverId == this.id;
     });
   }
   passengers() {
@@ -28,9 +28,10 @@ class Passenger {
     this.id = passengerId++;
     store.passengers.push(this);
   }
+
   trips() {
-  return store.trips.filter(trip => {
-    return trip.passengerId == this.id;
+    return store.trips.filter(trip => {
+      return trip.passengerId == this.id;
     });
   }
   drivers() {
@@ -43,17 +44,15 @@ class Passenger {
 class Trip {
   constructor(driver, passenger) {
     this.driverId = driver.id;
-    this.passengerId = passenger.id
+    this.passengerId = passenger.id;
     this.id = tripId++;
     store.trips.push(this);
   }
-
-  drivers() {
+  driver() {
     return store.drivers.find(driver => {
-      return.driver.id === this.driverId;
+      return driver.id === this.driverId;
     });
   }
-
   passenger() {
     return store.passengers.find(passenger => {
       return passenger.id === this.passengerId;
